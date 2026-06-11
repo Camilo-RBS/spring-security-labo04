@@ -1,0 +1,3959 @@
+{
+  "apidogProject": "1.0.0",
+  "$schema": {
+    "app": "apidog",
+    "type": "project",
+    "version": "1.2.0"
+  },
+  "info": {
+    "name": "Spring Security Labo04",
+    "description": "",
+    "mockRule": {
+      "rules": [],
+      "enableSystemRule": true
+    }
+  },
+  "projectSetting": {
+    "id": "1311644",
+    "auth": {},
+    "securityScheme": {},
+    "gateway": [],
+    "language": "en-US",
+    "apiStatuses": [
+      "developing",
+      "testing",
+      "released",
+      "deprecated"
+    ],
+    "mockSettings": {},
+    "preProcessors": [],
+    "postProcessors": [],
+    "advancedSettings": {
+      "allowAutomationWriteAutomationCreatedSprintBranch": true,
+      "enableJsonc": false,
+      "enableBigint": false,
+      "responseValidate": true,
+      "enableTestScenarioSetting": false,
+      "enableYAPICompatScript": false,
+      "isDefaultUrlEncoding": 3,
+      "publishedDocUrlRules": {
+        "defaultRule": "SLUGIFY_WITH_RESOURCE_KEY",
+        "resourceKeyStandard": "NEW"
+      }
+    },
+    "initialDisabledMockIds": [],
+    "servers": [
+      {
+        "id": "default",
+        "name": "Default Server",
+        "moduleId": 1308170
+      }
+    ],
+    "cloudMock": {
+      "security": "free",
+      "enable": false,
+      "tokenKey": "apidogToken"
+    }
+  },
+  "apiCollection": [
+    {
+      "name": "Root",
+      "id": 8999295,
+      "auth": {},
+      "securityScheme": {},
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "identityPattern": {
+        "httpApi": {
+          "type": "methodAndPath",
+          "bodyType": "",
+          "fields": []
+        }
+      },
+      "shareSettings": {},
+      "visibility": "SHARED",
+      "moduleId": 1308170,
+      "preProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "postProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "inheritPostProcessors": {},
+      "inheritPreProcessors": {},
+      "items": [
+        {
+          "name": "Auth",
+          "id": 8999296,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 1308170,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "Login",
+              "api": {
+                "id": "37687529",
+                "method": "post",
+                "path": "/api/auth/login",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "120794194",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Token + datos del usuario",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "username": {
+                        "type": "string",
+                        "examples": [
+                          "usuario123"
+                        ]
+                      },
+                      "password": {
+                        "type": "string",
+                        "examples": [
+                          "MiPassw0rd!"
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "username",
+                      "password"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"username\": \"camilo123\",\r\n  \"password\": \"Admin123!\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Auth"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [
+                  {
+                    "id": 50862065,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "120794194",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Signup",
+              "api": {
+                "id": "37687530",
+                "method": "post",
+                "path": "/api/auth/signup",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "186453842",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Token + datos del usuario",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "username": {
+                        "type": "string",
+                        "examples": [
+                          "usuario123"
+                        ]
+                      },
+                      "name": {
+                        "type": "string",
+                        "examples": [
+                          "Nombre"
+                        ]
+                      },
+                      "surname": {
+                        "type": "string",
+                        "examples": [
+                          "Apellido"
+                        ]
+                      },
+                      "email": {
+                        "type": "string",
+                        "examples": [
+                          "correo@ejemplo.com"
+                        ]
+                      },
+                      "password": {
+                        "type": "string",
+                        "examples": [
+                          "MiPassw0rd!"
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "username",
+                      "name",
+                      "surname",
+                      "email",
+                      "password"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"username\": \"camilo123\",\r\n  \"name\": \"Camilo\",\r\n  \"surname\": \"Apellido\",\r\n  \"email\": \"camilo@ejemplo.com\",\r\n  \"password\": \"Admin123!\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Auth"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [
+                  {
+                    "id": 50862066,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "186453842",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Obtener perfil",
+              "api": {
+                "id": "37687531",
+                "method": "get",
+                "path": "/api/auth/profile",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "H4W9MKba_QWki4uds1rrc",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "H4W9MKba_QWki4uds1rrc",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "H4W9MKba_QWki4uds1rrc": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "172603718",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Datos del usuario autenticado",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Auth"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [
+                  {
+                    "id": 50862067,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "172603718",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Actualizar perfil",
+              "api": {
+                "id": "37687532",
+                "method": "put",
+                "path": "/api/auth/update/profile",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "MBdrbjqsr_cRF2kpp7o55",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "MBdrbjqsr_cRF2kpp7o55",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "MBdrbjqsr_cRF2kpp7o55": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "151287304",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Token + datos actualizados",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "username": {
+                        "type": "string",
+                        "examples": [
+                          "nuevoUsuario"
+                        ]
+                      },
+                      "name": {
+                        "type": "string",
+                        "examples": [
+                          "Nuevo Nombre"
+                        ]
+                      },
+                      "surname": {
+                        "type": "string",
+                        "examples": [
+                          "Nuevo Apellido"
+                        ]
+                      },
+                      "email": {
+                        "type": "string",
+                        "examples": [
+                          "nuevo@ejemplo.com"
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "username",
+                      "name",
+                      "surname",
+                      "email"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"username\": \"camilo_nuevo\",\r\n  \"name\": \"Camilo Editado\",\r\n  \"surname\": \"Apellido Nuevo\",\r\n  \"email\": \"nuevo@ejemplo.com\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Auth"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [
+                  {
+                    "id": 50862068,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "151287304",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Cambiar contraseña",
+              "api": {
+                "id": "37687533",
+                "method": "put",
+                "path": "/api/auth/update/password",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "PiiRSF07w6jgGU36UXsyt",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "PiiRSF07w6jgGU36UXsyt",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "PiiRSF07w6jgGU36UXsyt": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "112523759",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Datos del usuario actualizado",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "oldpassword": {
+                        "type": "string",
+                        "examples": [
+                          "MiPassw0rd!"
+                        ]
+                      },
+                      "newpassword": {
+                        "type": "string",
+                        "examples": [
+                          "Nuev0Passw0rd#"
+                        ]
+                      },
+                      "confirmpassword": {
+                        "type": "string",
+                        "examples": [
+                          "Nuev0Passw0rd#"
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "oldpassword",
+                      "newpassword",
+                      "confirmpassword"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"oldpassword\": \"Admin123!\",\r\n  \"newpassword\": \"Nuevo123!\",\r\n  \"confirmpassword\": \"Nuevo123!\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Auth"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 30,
+                "cases": [
+                  {
+                    "id": 50862069,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "112523759",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Logout",
+              "api": {
+                "id": "37687534",
+                "method": "post",
+                "path": "/api/auth/logout",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "29opjIHO161zYfduIlQwP",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "29opjIHO161zYfduIlQwP",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "{{bearerToken}}"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "29opjIHO161zYfduIlQwP": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "182312195",
+                    "code": "200",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "OK",
+                    "contentType": "noContent",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "additionalContentTypes": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Auth"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 36,
+                "cases": [
+                  {
+                    "id": 50862070,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "182312195",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cine - Películas",
+          "id": 8999297,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 1308170,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "Listar películas",
+              "api": {
+                "id": "37687535",
+                "method": "get",
+                "path": "/api/cine/peliculas",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "Ztn6IIFLcT",
+                      "name": "page",
+                      "required": false,
+                      "enable": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer",
+                        "examples": [
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "id": "XeUVdlrIZp",
+                      "name": "size",
+                      "required": false,
+                      "enable": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer",
+                        "examples": [
+                          10
+                        ]
+                      }
+                    }
+                  ],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "lRCAtgn_9Qs0Zrj4E0eHx",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "lRCAtgn_9Qs0Zrj4E0eHx",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "lRCAtgn_9Qs0Zrj4E0eHx": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "169969704",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Lista paginada de películas",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Películas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [
+                  {
+                    "id": 50862071,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "169969704",
+                    "parameters": {
+                      "path": [],
+                      "query": [
+                        {
+                          "id": "O2968PtOa7",
+                          "relatedId": "Ztn6IIFLcT",
+                          "relatedName": "page",
+                          "name": "page",
+                          "type": "integer",
+                          "value": "",
+                          "enable": true,
+                          "description": "",
+                          "isDelete": false
+                        },
+                        {
+                          "id": "54au8eADs1",
+                          "relatedId": "XeUVdlrIZp",
+                          "relatedName": "size",
+                          "name": "size",
+                          "type": "integer",
+                          "value": "",
+                          "enable": true,
+                          "description": "",
+                          "isDelete": false
+                        }
+                      ],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Crear película",
+              "api": {
+                "id": "37687536",
+                "method": "post",
+                "path": "/api/cine/peliculas",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "LDxY_K5cOIW4pGdplZptq",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "LDxY_K5cOIW4pGdplZptq",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "LDxY_K5cOIW4pGdplZptq": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "159375667",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Película creada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "examples": [
+                          "Avengers"
+                        ]
+                      },
+                      "genre": {
+                        "type": "string",
+                        "examples": [
+                          "Acción"
+                        ]
+                      },
+                      "duration": {
+                        "type": "integer",
+                        "examples": [
+                          120
+                        ]
+                      },
+                      "description": {
+                        "type": "string",
+                        "examples": [
+                          "Una película de superhéroes"
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "title",
+                      "genre",
+                      "duration",
+                      "description"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"title\": \"Avengers\",\r\n  \"genre\": \"Acción\",\r\n  \"duration\": 120,\r\n  \"description\": \"Película de superhéroes\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Películas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [
+                  {
+                    "id": 50862072,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "159375667",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Actualizar película",
+              "api": {
+                "id": "37687537",
+                "method": "put",
+                "path": "/api/cine/peliculas/2",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "y2XQfj1_FwDXubJDk22ap",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "y2XQfj1_FwDXubJDk22ap",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "y2XQfj1_FwDXubJDk22ap": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "163289910",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Película actualizada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "examples": [
+                          "Avengers 2"
+                        ]
+                      },
+                      "genre": {
+                        "type": "string",
+                        "examples": [
+                          "Acción"
+                        ]
+                      },
+                      "duration": {
+                        "type": "integer",
+                        "examples": [
+                          150
+                        ]
+                      },
+                      "description": {
+                        "type": "string",
+                        "examples": [
+                          "Secuela"
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "title",
+                      "genre",
+                      "duration",
+                      "description"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"title\": \"Endgame\",\r\n  \"genre\": \"Acción\",\r\n  \"duration\": 120,\r\n  \"description\": \"Película de superhéroes\"\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Películas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [
+                  {
+                    "id": 50862073,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "163289910",
+                    "parameters": {
+                      "path": [
+                        {
+                          "id": "id#0",
+                          "relatedId": "id#0",
+                          "relatedName": "id",
+                          "name": "id",
+                          "value": "",
+                          "enable": true
+                        }
+                      ],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Eliminar película",
+              "api": {
+                "id": "37687538",
+                "method": "delete",
+                "path": "/api/cine/peliculas/2",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "7EEOx9AOBbcVmKQxaSpWh",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "7EEOx9AOBbcVmKQxaSpWh",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "7EEOx9AOBbcVmKQxaSpWh": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "124816978",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Película eliminada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Películas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [
+                  {
+                    "id": 50862074,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "124816978",
+                    "parameters": {
+                      "path": [
+                        {
+                          "id": "id#0",
+                          "relatedId": "id#0",
+                          "relatedName": "id",
+                          "name": "id",
+                          "value": "",
+                          "enable": true
+                        }
+                      ],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cine - Salas",
+          "id": 8999298,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 1308170,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "Listar salas",
+              "api": {
+                "id": "37687539",
+                "method": "get",
+                "path": "/api/cine/salas",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "hSHd4eT1Ls",
+                      "name": "page",
+                      "required": false,
+                      "enable": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer",
+                        "examples": [
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "id": "LX9w9ziVKB",
+                      "name": "size",
+                      "required": false,
+                      "enable": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer",
+                        "examples": [
+                          10
+                        ]
+                      }
+                    }
+                  ],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "dgxpae2RCoGKhDe0iSmYp",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "dgxpae2RCoGKhDe0iSmYp",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "dgxpae2RCoGKhDe0iSmYp": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "159254491",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Lista paginada de salas",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Salas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [
+                  {
+                    "id": 50862075,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "159254491",
+                    "parameters": {
+                      "path": [],
+                      "query": [
+                        {
+                          "id": "9B6SBFC7C0",
+                          "relatedId": "hSHd4eT1Ls",
+                          "relatedName": "page",
+                          "name": "page",
+                          "type": "integer",
+                          "value": "",
+                          "enable": true,
+                          "description": "",
+                          "isDelete": false
+                        },
+                        {
+                          "id": "67Zs2imQPv",
+                          "relatedId": "LX9w9ziVKB",
+                          "relatedName": "size",
+                          "name": "size",
+                          "type": "integer",
+                          "value": "",
+                          "enable": true,
+                          "description": "",
+                          "isDelete": false
+                        }
+                      ],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Crear sala",
+              "api": {
+                "id": "37687540",
+                "method": "post",
+                "path": "/api/cine/salas",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "Gqh0SnZQKhG6OVMfvNzjo",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "Gqh0SnZQKhG6OVMfvNzjo",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "Gqh0SnZQKhG6OVMfvNzjo": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "111054703",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Sala creada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "examples": [
+                          "Sala 1"
+                        ]
+                      },
+                      "capacity": {
+                        "type": "integer",
+                        "examples": [
+                          100
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "name",
+                      "capacity"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"name\": \"Sala 5\",\r\n  \"capacity\": 100\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Salas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [
+                  {
+                    "id": 50862076,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "111054703",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Actualizar sala",
+              "api": {
+                "id": "37687541",
+                "method": "put",
+                "path": "/api/cine/salas/3",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "5S7mUY1JwAPqAMLlJae5R",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "5S7mUY1JwAPqAMLlJae5R",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "5S7mUY1JwAPqAMLlJae5R": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "182184676",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Sala actualizada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "examples": [
+                          "Sala 2"
+                        ]
+                      },
+                      "capacity": {
+                        "type": "integer",
+                        "examples": [
+                          150
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "name",
+                      "capacity"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"name\": \"Sala 3\",\r\n  \"capacity\": 100\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Salas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [
+                  {
+                    "id": 50862077,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "182184676",
+                    "parameters": {
+                      "path": [
+                        {
+                          "id": "id#0",
+                          "relatedId": "id#0",
+                          "relatedName": "id",
+                          "name": "id",
+                          "value": "",
+                          "enable": true
+                        }
+                      ],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Eliminar sala",
+              "api": {
+                "id": "37687542",
+                "method": "delete",
+                "path": "/api/cine/salas/3",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "RKFseqgvITEcdcqFf2Pml",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "RKFseqgvITEcdcqFf2Pml",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "RKFseqgvITEcdcqFf2Pml": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "168216471",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Sala eliminada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Salas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [
+                  {
+                    "id": 50862078,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "168216471",
+                    "parameters": {
+                      "path": [
+                        {
+                          "id": "id#0",
+                          "relatedId": "id#0",
+                          "relatedName": "id",
+                          "name": "id",
+                          "value": "",
+                          "enable": true
+                        }
+                      ],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cine - Catálogo",
+          "id": 8999299,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 1308170,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "Listar funciones",
+              "api": {
+                "id": "37687543",
+                "method": "get",
+                "path": "/api/cine/catalogo",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "e8mYJBNrID",
+                      "name": "page",
+                      "required": false,
+                      "enable": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer",
+                        "examples": [
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "id": "vA5E2LUXQp",
+                      "name": "size",
+                      "required": false,
+                      "enable": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer",
+                        "examples": [
+                          10
+                        ]
+                      }
+                    }
+                  ],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "59R1Nyb6yXQgebVG96Ouh",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "59R1Nyb6yXQgebVG96Ouh",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "59R1Nyb6yXQgebVG96Ouh": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "170650980",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Lista paginada de funciones",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Catálogo"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [
+                  {
+                    "id": 50862079,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "170650980",
+                    "parameters": {
+                      "path": [],
+                      "query": [
+                        {
+                          "id": "2FSSBe1ffF",
+                          "relatedId": "e8mYJBNrID",
+                          "relatedName": "page",
+                          "name": "page",
+                          "type": "integer",
+                          "value": "",
+                          "enable": true,
+                          "description": "",
+                          "isDelete": false
+                        },
+                        {
+                          "id": "7UWnUKSvYX",
+                          "relatedId": "vA5E2LUXQp",
+                          "relatedName": "size",
+                          "name": "size",
+                          "type": "integer",
+                          "value": "",
+                          "enable": true,
+                          "description": "",
+                          "isDelete": false
+                        }
+                      ],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Crear función",
+              "api": {
+                "id": "37687544",
+                "method": "post",
+                "path": "/api/cine/catalogo",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "DcJy9iz0XHlgmssIB_iSC",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "DcJy9iz0XHlgmssIB_iSC",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "DcJy9iz0XHlgmssIB_iSC": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "168764742",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Función creada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "movieId": {
+                        "type": "integer",
+                        "examples": [
+                          1
+                        ]
+                      },
+                      "hallId": {
+                        "type": "integer",
+                        "examples": [
+                          1
+                        ]
+                      },
+                      "startTime": {
+                        "type": "string",
+                        "examples": [
+                          "2026-06-15T20:00:00"
+                        ]
+                      },
+                      "price": {
+                        "type": "number",
+                        "examples": [
+                          85
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "movieId",
+                      "hallId",
+                      "startTime",
+                      "price"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"movieId\": 1,\r\n  \"hallId\": 1,\r\n  \"startTime\": \"2026-06-15T20:00:00\",\r\n  \"price\": 85.0\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Catálogo"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [
+                  {
+                    "id": 50862080,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "168764742",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Actualizar función",
+              "api": {
+                "id": "37687545",
+                "method": "put",
+                "path": "/api/cine/catalogo/1",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "1B687aE8T7nnkhN1fE54h",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "1B687aE8T7nnkhN1fE54h",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "1B687aE8T7nnkhN1fE54h": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "113159556",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Función actualizada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "movieId": {
+                        "type": "integer",
+                        "examples": [
+                          1
+                        ]
+                      },
+                      "hallId": {
+                        "type": "integer",
+                        "examples": [
+                          1
+                        ]
+                      },
+                      "startTime": {
+                        "type": "string",
+                        "examples": [
+                          "2026-06-15T21:00:00"
+                        ]
+                      },
+                      "price": {
+                        "type": "number",
+                        "examples": [
+                          90
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "movieId",
+                      "hallId",
+                      "startTime",
+                      "price"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"movieId\": 1,\r\n  \"hallId\": 1,\r\n  \"startTime\": \"2026-07-15T20:00:00\",\r\n  \"price\": 85.0\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Catálogo"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [
+                  {
+                    "id": 50862081,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "113159556",
+                    "parameters": {
+                      "path": [
+                        {
+                          "id": "id#0",
+                          "relatedId": "id#0",
+                          "relatedName": "id",
+                          "name": "id",
+                          "value": "",
+                          "enable": true
+                        }
+                      ],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Eliminar función",
+              "api": {
+                "id": "37687546",
+                "method": "delete",
+                "path": "/api/cine/catalogo/3",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "DhrNSiCjAemrY_DCihM1o",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "DhrNSiCjAemrY_DCihM1o",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "DhrNSiCjAemrY_DCihM1o": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "103402506",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Función eliminada",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Catálogo"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [
+                  {
+                    "id": 50862082,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "103402506",
+                    "parameters": {
+                      "path": [
+                        {
+                          "id": "id#0",
+                          "relatedId": "id#0",
+                          "relatedName": "id",
+                          "name": "id",
+                          "value": "",
+                          "enable": true
+                        }
+                      ],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cine - Reservas",
+          "id": 8999300,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 1308170,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "Crear reserva",
+              "api": {
+                "id": "37687547",
+                "method": "post",
+                "path": "/api/cine/reservas",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "D5C7V9G_9724tr_ClwPZi",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "D5C7V9G_9724tr_ClwPZi",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "D5C7V9G_9724tr_ClwPZi": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "148100201",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Reserva creada con totalPrice calculado",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {
+                      "functionId": {
+                        "type": "integer",
+                        "examples": [
+                          1
+                        ]
+                      },
+                      "seats": {
+                        "type": "integer",
+                        "examples": [
+                          2
+                        ]
+                      }
+                    },
+                    "x-apidog-orders": [
+                      "functionId",
+                      "seats"
+                    ]
+                  },
+                  "required": true,
+                  "mediaType": "application/json",
+                  "examples": [
+                    {
+                      "mediaType": "application/json",
+                      "value": "{\r\n  \"functionId\": 1,\r\n  \"seats\": 2\r\n}"
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Reservas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [
+                  {
+                    "id": 50862083,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "148100201",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "data": "",
+                      "type": "application/json",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Obtener reserva por ID",
+              "api": {
+                "id": "37687548",
+                "method": "get",
+                "path": "/api/cine/reservas/1",
+                "parameters": {
+                  "query": [],
+                  "path": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {
+                  "type": "securityscheme"
+                },
+                "securityScheme": {
+                  "schemeGroups": [
+                    {
+                      "id": "Nuyk0MlcdjpqqGSRWcdGE",
+                      "schemeIds": [
+                        559322
+                      ]
+                    }
+                  ],
+                  "required": true,
+                  "use": {
+                    "id": "Nuyk0MlcdjpqqGSRWcdGE",
+                    "configs": {
+                      "559322": {
+                        "authConfigs": {
+                          "x-apidog": {
+                            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiaWF0IjoxNzgxMTcxNTc3LCJleHAiOjE3ODEyNTc5Nzd9.bYRyKXn97IY2v44E6wifd3nNWILNEv-Sj8dpAEg3iso"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "scopes": {
+                    "Nuyk0MlcdjpqqGSRWcdGE": {
+                      "559322": []
+                    }
+                  }
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "164648781",
+                    "code": "200",
+                    "name": "",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "itemSchema": {},
+                    "description": "Datos de la reserva",
+                    "contentType": "noContent",
+                    "mediaType": "",
+                    "oasExtensions": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "required": false,
+                  "mediaType": "",
+                  "examples": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [
+                  "Cine - Reservas"
+                ],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [
+                  {
+                    "id": 50862084,
+                    "type": "DEBUG_CASE",
+                    "path": null,
+                    "name": "Success",
+                    "responseId": "164648781",
+                    "parameters": {
+                      "path": [
+                        {
+                          "id": "id#0",
+                          "relatedId": "id#0",
+                          "relatedName": "id",
+                          "name": "id",
+                          "value": "",
+                          "enable": true
+                        }
+                      ],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "commonParameters": {},
+                    "requestBody": {
+                      "parameters": [],
+                      "type": "none",
+                      "generateMode": "normal"
+                    },
+                    "auth": {},
+                    "securityScheme": {},
+                    "advancedSettings": {
+                      "disabledSystemHeaders": {}
+                    },
+                    "requestResult": null,
+                    "visibility": "INHERITED",
+                    "moduleId": 1308170,
+                    "categoryId": 0,
+                    "tagIds": [],
+                    "apiTestDataList": [],
+                    "preProcessors": [],
+                    "postProcessors": [],
+                    "inheritPostProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    },
+                    "inheritPreProcessors": {
+                      "enable": {},
+                      "defaultEnable": {}
+                    }
+                  }
+                ],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 1308170,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "webSocketCollection": [],
+  "socketIOCollection": [],
+  "mcpClientCollection": [],
+  "responseCollection": [],
+  "schemaCollection": [],
+  "securitySchemeCollection": [
+    {
+      "id": 1464964,
+      "moduleId": 1308170,
+      "name": "Root",
+      "items": [
+        {
+          "id": 559322,
+          "name": "BearerAuth",
+          "moduleId": 1308170,
+          "authType": "jwt",
+          "oasAuthType": "http",
+          "authConfigs": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+          },
+          "guidanceConfigs": {}
+        }
+      ]
+    }
+  ],
+  "oasComponentCollection": [],
+  "requestCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "ordering": [
+        "requestFolder.10751671"
+      ],
+      "items": []
+    }
+  ],
+  "environments": [],
+  "commonScripts": [],
+  "globalVariables": [],
+  "commonParameters": null,
+  "customFunctions": [],
+  "projectTestCaseCategories": [
+    {
+      "id": 1492840,
+      "name": "Positive",
+      "description": "Valid inputs and correct expected results, representing typical usage."
+    },
+    {
+      "id": 1492841,
+      "name": "Negative",
+      "description": "Negative, invalid inputs such as missing fields, wrong types, unsupported methods, etc."
+    },
+    {
+      "id": 1492842,
+      "name": "Boundary",
+      "description": "Extreme or edge conditions, such as maximum string length, empty values, zero, null, etc."
+    },
+    {
+      "id": 1492843,
+      "name": "Security",
+      "description": "Test cases that may expose API security risks."
+    },
+    {
+      "id": 1492844,
+      "name": "Other",
+      "description": "Test cases not classified under existing categories."
+    }
+  ],
+  "projectTestCaseTags": [
+    {
+      "id": 6913949,
+      "name": "Required Fields Only",
+      "description": "Send only the required fields with valid values, omitting all optional fields, to test minimal valid requests."
+    },
+    {
+      "id": 6913950,
+      "name": "Valid Semantic",
+      "description": "Use values that are syntactically correct and also make sense in the business logic or domain context."
+    },
+    {
+      "id": 6913951,
+      "name": "Enum Combination Coverage",
+      "description": "For all enum-type parameters, apply orthogonal design to systematically construct test case combinations of parameters and their enum values, dedicated to testing enum coverage."
+    },
+    {
+      "id": 6913952,
+      "name": "Other Positive Case",
+      "description": "Provide realistic and valid inputs that match the API specification, producing the correct and expected result."
+    },
+    {
+      "id": 6913953,
+      "name": "Missing Required Fields",
+      "description": "Omit one or more required fields in the request body or parameters."
+    },
+    {
+      "id": 6913954,
+      "name": "Invalid Values",
+      "description": "Provide values that are within the correct type and format, but logically invalid for the field."
+    },
+    {
+      "id": 6913955,
+      "name": "Type Errors",
+      "description": "Use values with incorrect data types, such as sending a string instead of an integer."
+    },
+    {
+      "id": 6913956,
+      "name": "Format Errors",
+      "description": "Provide values in an incorrect format, e.g., wrong date pattern, malformed email address."
+    },
+    {
+      "id": 6913957,
+      "name": "Semantic Errors",
+      "description": "Use syntactically correct and properly formatted values that are logically impossible or violate domain rules."
+    },
+    {
+      "id": 6913958,
+      "name": "Other Negative Case",
+      "description": "Provide invalid or unexpected inputs that should trigger error handling or rejection by the API."
+    },
+    {
+      "id": 6913959,
+      "name": "Null",
+      "description": "Must be the JSON literal `null` (not empty, not \"null\")."
+    },
+    {
+      "id": 6913960,
+      "name": "Zero",
+      "description": "Must be the numeric literal 0."
+    },
+    {
+      "id": 6913961,
+      "name": "Empty Values",
+      "description": "Must be \"\"."
+    },
+    {
+      "id": 6913962,
+      "name": "Max Values",
+      "description": "Provide the exact minimum and maximum allowed values for numeric or date fields."
+    },
+    {
+      "id": 6913963,
+      "name": "Min Values",
+      "description": "Provide the exact minimum and maximum allowed values for numeric or date fields."
+    },
+    {
+      "id": 6913964,
+      "name": "Overflow",
+      "description": "Provide values just beyond the allowed minimum or maximum boundaries."
+    },
+    {
+      "id": 6913965,
+      "name": "Underflow",
+      "description": "Provide values just beyond the allowed minimum or maximum boundaries."
+    },
+    {
+      "id": 6913966,
+      "name": "Overly Long Strings",
+      "description": "Provide strings longer than the maximum allowed length, or shorter than the minimum required length."
+    },
+    {
+      "id": 6913967,
+      "name": "Overly Short Strings",
+      "description": "Provide strings longer than the maximum allowed length, or shorter than the minimum required length."
+    },
+    {
+      "id": 6913968,
+      "name": "Broken Object Level Authorization",
+      "description": "Users access or manipulate data objects without proper authorization."
+    },
+    {
+      "id": 6913969,
+      "name": "Access Control",
+      "description": "Restricting resources and actions users can access based on roles, permissions, or attributes."
+    },
+    {
+      "id": 6913970,
+      "name": "Auth Failures",
+      "description": "Authentication is weak, misconfigured, or bypassed, allowing unauthorized access."
+    },
+    {
+      "id": 6913971,
+      "name": "SQL Injection",
+      "description": "Insert malicious SQL code into input fields to test for SQL injection vulnerabilities."
+    },
+    {
+      "id": 6913972,
+      "name": "XSS Injection",
+      "description": "Inject JavaScript or HTML tags to test for cross-site scripting vulnerabilities."
+    },
+    {
+      "id": 6913973,
+      "name": "Fuzzy Input",
+      "description": "Send large or randomly generated payloads to test input validation and stability."
+    },
+    {
+      "id": 6913974,
+      "name": "Command Injection",
+      "description": "Insert shell commands into inputs to test for command execution vulnerabilities."
+    },
+    {
+      "id": 6913975,
+      "name": "JSON Injection",
+      "description": "Insert malicious or unexpected JSON structures to test parsing and validation."
+    },
+    {
+      "id": 6913976,
+      "name": "NoSQL Injection",
+      "description": "Provide NoSQL-specific malicious queries or operators to test for injection vulnerabilities."
+    },
+    {
+      "id": 6913977,
+      "name": "Other",
+      "description": "Test cases not classified under existing categories."
+    }
+  ],
+  "projectAssociations": [],
+  "moduleSettings": [
+    {
+      "id": "1308170",
+      "name": "Default module",
+      "description": "",
+      "moduleVariables": [],
+      "openApiInfo": {}
+    }
+  ]
+}
