@@ -7,12 +7,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.server.app.dto.auth.LoginDto;
+import com.server.app.dto.auth.SignupDto;
+import com.server.app.dto.auth.UpdatePasswordDto;
+import com.server.app.dto.auth.UpdateProfileDto;
 import com.server.app.dto.user.UserCreateDto;
 import com.server.app.dto.user.UserUpdateDto;
 import com.server.app.entities.Role;
 import com.server.app.entities.User;
+import com.server.app.exceptions.BadRequestException;
 import com.server.app.exceptions.ConfictException;
 import com.server.app.exceptions.NotFoundException;
+import com.server.app.exceptions.UnauthorizedException;
 import com.server.app.repositories.RoleRepository;
 import com.server.app.repositories.UserRepository;
 
@@ -24,10 +30,95 @@ public class UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
+    // ── Auth ────────────────────────────────────────────────────────────────────
+
+    @Transactional(readOnly = true)
+    public User login(LoginDto dto) {
+        User user = userRepository.findUserByUsername(dto.getUsername())
+                .orElseThrow(() -> new UnauthorizedException("Credenciales inválidas"));
+
+        if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
+            throw new UnauthorizedException("Credenciales inválidas");
+        }
+
+        if (user.isBlocked()) {
+            throw new UnauthorizedException("Tu cuenta ha sido bloqueada");
+        }
+
+        return user;
+    }
+
+    @Transactional
+    public User signUp(SignupDto dto) {
+        uniqueUsername(dto.getUsername(), null);
+        uniqueEmail(dto.getEmail(), null);
+
+        Role role = roleRepository.findByName("ADMIN")
+                .orElseThrow(() -> new NotFoundException("Rol ADMIN no encontrado. Ejecuta el script.sql primero."));
+
+        User user = new User();
+        user.setUsername(dto.getUsername());
+        user.setName(dto.getName());
+        user.setSurname(dto.getSurname());
+        user.setEmail(dto.getEmail());
+        user.setPassword(passwordEncoder.encode(dto.getPassword()));
+        user.setRole(role);
+
+        return userRepository.save(user);
+    }
+
+    @Transactional
+    public User updateProfile(int userId, UpdateProfileDto dto) {
+        User user = findById(userId);
+
+        if (user.isBlocked()) {
+            throw new ConfictException("Tu cuenta ha sido bloqueada");
+        }
+
+        if (dto.getUsername() != null && !dto.getUsername().isBlank()) {
+            uniqueUsername(dto.getUsername(), userId);
+            user.setUsername(dto.getUsername());
+        }
+
+        if (dto.getName() != null && !dto.getName().isBlank()) {
+            user.setName(dto.getName());
+        }
+
+        if (dto.getSurname() != null && !dto.getSurname().isBlank()) {
+            user.setSurname(dto.getSurname());
+        }
+
+        if (dto.getEmail() != null && !dto.getEmail().isBlank()) {
+            uniqueEmail(dto.getEmail(), userId);
+            user.setEmail(dto.getEmail());
+        }
+
+        return userRepository.save(user);
+    }
+
+    @Transactional
+    public User updatePassword(int userId, UpdatePasswordDto dto) {
+        User user = findById(userId);
+
+        if (!passwordEncoder.matches(dto.getOldpassword(), user.getPassword())) {
+            throw new UnauthorizedException("La contraseña actual es incorrecta");
+        }
+
+        if (!dto.getNewpassword().equals(dto.getConfirmpassword())) {
+            throw new BadRequestException("Las contraseñas no coinciden");
+        }
+
+        user.setPassword(passwordEncoder.encode(dto.getNewpassword()));
+        return userRepository.save(user);
+    }
+
+    // ── Admin CRUD ───────────────────────────────────────────────────────────────
+
     @Transactional
     public User create(UserCreateDto dto) {
         uniqueUsername(dto.getUsername(), null);
         uniqueEmail(dto.getEmail(), null);
+
         User user = new User();
         user.setUsername(dto.getUsername());
         user.setName(dto.getName());
@@ -46,6 +137,12 @@ public class UserService {
 
     public Page<User> findAll(int page, int size, String search) {
         return userRepository.findAll(PageRequest.of(page, size), search);
+    }
+
+    @Transactional(readOnly = true)
+    public User findById(int userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException("Usuario no encontrado"));
     }
 
     @Transactional
@@ -86,6 +183,8 @@ public class UserService {
 
         return userRepository.save(user);
     }
+
+    // ── Helpers ──────────────────────────────────────────────────────────────────
 
     private void uniqueUsername(String username, Integer id) {
         userRepository.findUserByUsername(username).ifPresent(existing -> {

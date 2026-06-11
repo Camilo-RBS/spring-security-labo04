@@ -1,6 +1,8 @@
 package com.server.app.controllers;
 
 import com.server.app.dto.response.ExceptionResponse;
+import com.server.app.exceptions.ConfictException;
+import com.server.app.exceptions.ForbiddenException;
 import com.server.app.exceptions.ServerException;
 import com.server.app.exceptions.NotFoundException;
 import com.server.app.exceptions.UnauthorizedException;
@@ -44,6 +46,16 @@ public class AdviceController {
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<ExceptionResponse> handleUnauthorized(UnauthorizedException ex) {
         return buildResponse(HttpStatus.UNAUTHORIZED, ex.getMessage());
+    }
+
+    @ExceptionHandler(ConfictException.class)
+    public ResponseEntity<ExceptionResponse> handleConfict(ConfictException ex) {
+        return buildResponse(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<ExceptionResponse> handleForbidden(ForbiddenException ex) {
+        return buildResponse(HttpStatus.FORBIDDEN, ex.getMessage());
     }
 
     @ExceptionHandler(ServerException.class)
